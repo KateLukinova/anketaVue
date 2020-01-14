@@ -59,11 +59,7 @@ module.exports = {
               options: {
                   name: '[name].[ext]?[hash]'
               }
-          },
-        {
-          test: /\.(css|sass|scss)$/,
-          use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader!sass-loader' })
-        }
+          }
       ]
   },
   plugins: [
@@ -85,10 +81,10 @@ module.exports = {
   },
   devtool:
     '#eval-source-map'
-  }
+  };
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = '#source-map'
+  module.exports.devtool = '#source-map';
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
